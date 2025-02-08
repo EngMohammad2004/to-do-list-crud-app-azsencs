@@ -3,6 +3,7 @@
     margin: 0;
     outline: 0;
     font-family: system-ui;
+    box-sizing: border-box;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 body > div {
@@ -41,26 +43,28 @@ body > div .container > div {
     width: 80%;
     display: flex;
     justify-content: space-between;
-    /* position: sticky;
-    top: 0;
-    background-color: white; */
+    gap: 10px;
 }
 
 body > div > h1 {
     margin: 10px auto;
+    font-size: 1.8rem;
+    text-align: center;
 }
 
 #task-input {
-    height: 50px;
-    width: 75%;
+    height: 45px;
+    width: 70%;
     padding: 0 10px;
     border: solid #aaaaaa 1px;
     border-radius: 10px;
+    font-size: 1rem;
 }
 
 #add-task {
-    height: 50px;
-    width: 20%;
+    height: 45px;
+    width: 25%;
+    font-size: 1rem;
 }
 
 .container ul {
@@ -108,11 +112,14 @@ body > div > h1 {
 .container ul li > div {
     width: 20%;
     height: 70%;
+    display: flex;
+    gap: 5px;
 }
 
 .container ul li button {
     width: 45%;
     height: 100%;
+    font-size: 0.9rem;
 }
 
 .container ul li button:hover {
@@ -134,5 +141,56 @@ button:hover {
     scale: 1.07;
 }
 
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
 
+    body > div {
+        width: 90%;
+        max-height: none;
+        padding: 15px;
+    }
 
+    body > div .container > div {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #task-input {
+        width: 100%;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    #add-task {
+        width: 100%;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .container ul li {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        height: auto;
+        gap: 10px;
+    }
+
+    .container ul li p {
+        width: 100%;
+    }
+
+    .container ul li > div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container ul li button {
+        width: 48%;
+    }
+}
